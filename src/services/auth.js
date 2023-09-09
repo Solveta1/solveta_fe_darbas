@@ -29,10 +29,11 @@ export const authProvider = {
       authProvider.error = 'Something went wrong!';
     }
   },
-  async signout() {
+  signout() {
     localStorage.removeItem('token');
     authProvider.isAuthenticated = false;
     authProvider.error = null;
+    console.log('signout');
   },
   async register(crediantials) {
     try {

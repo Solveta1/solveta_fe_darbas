@@ -16,19 +16,22 @@ const router = createBrowserRouter([
   {
     id: 'root',
     path: '/',
+    loader: rootLoader,
     Component: Navigation,
     children: [
       {
         index: true,
+        loader: protectedLoader,
         Component: HomePage,
       },
       {
         path: 'login',
-        loader: loginLoader,
+        loader: loginRegistrationLoader,
         Component: LoginPage,
       },
       {
         path: 'register',
+        loader: loginRegistrationLoader,
         Component: RegisterPage,
       },
       {
@@ -41,7 +44,14 @@ const router = createBrowserRouter([
   },
 ]);
 
-function loginLoader() {
+function rootLoader() {
+  if (localStorage.getItem('token')) {
+    authProvider.isAuthenticated = true;
+  }
+  return null;
+}
+
+function loginRegistrationLoader() {
   if (authProvider.isAuthenticated) {
     return redirect('/');
   }
@@ -50,7 +60,7 @@ function loginLoader() {
 
 function protectedLoader() {
   if (!authProvider.isAuthenticated) {
-    return redirect('/');
+    return redirect('/login');
   }
   return null;
 }

@@ -1,8 +1,9 @@
-import { Form } from 'react-router-dom';
+import { Form, useNavigate } from 'react-router-dom';
 import { authProvider } from '../services/auth';
 import { useState } from 'react';
 
 function LoginPage() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -18,6 +19,9 @@ function LoginPage() {
     event.preventDefault();
     await authProvider.signin(formData);
     setFormError(authProvider.error);
+    if (authProvider.isAuthenticated) {
+      navigate('/');
+    }
   };
 
   return (

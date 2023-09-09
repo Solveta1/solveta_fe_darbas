@@ -18,7 +18,6 @@ function ProductsPage() {
       setIsLoading(false);
     }
     getData();
-    return;
   }, []);
 
   if (isLoading) {

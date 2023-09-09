@@ -33,7 +33,6 @@ export const authProvider = {
     localStorage.removeItem('token');
     authProvider.isAuthenticated = false;
     authProvider.error = null;
-    console.log('signout');
   },
   async register(crediantials) {
     try {

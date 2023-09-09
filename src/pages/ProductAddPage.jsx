@@ -31,11 +31,12 @@ function ProductAddPage() {
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     setFormError(false);
     if (formData.description.length < 6) {
       setFormError(true);
+      return;
     }
     const payload = { ...formData, startYear: Number(formData.startYear) };
     addProduct(payload);

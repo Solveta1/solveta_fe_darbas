@@ -17,6 +17,9 @@ function Navigation() {
           <li>
             <Link to='/products'>Products</Link>
           </li>
+          <li>
+            <Link to='/products/add'>Add product</Link>
+          </li>
         </ul>
       </nav>
 

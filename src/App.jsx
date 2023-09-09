@@ -40,7 +40,7 @@ const router = createBrowserRouter([
         loader: protectedLoader,
         children: [
           { index: true, Component: ProductsPage },
-          { path: 'products/add', Component: ProductAddPage },
+          { path: '/products/add', Component: ProductAddPage },
         ],
       },
       { path: '*', Component: ErrorPage },

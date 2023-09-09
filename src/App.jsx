@@ -1,4 +1,8 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  redirect,
+} from 'react-router-dom';
 import LoginPage from './pages/LoginPage.jsx';
 import RegisterPage from './pages/RegisterPage.jsx';
 import ProductsPage from './pages/ProductsPage.jsx';
@@ -6,15 +10,12 @@ import Navigation from './components/navigation/Navigation.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
 import HomePage from './pages/HomePage.jsx';
 import './App.css';
+import { authProvider } from './services/auth.js';
 
 const router = createBrowserRouter([
   {
     id: 'root',
     path: '/',
-    // loader() {
-    //   // Our root route always provides the user, if logged in
-    //   return { user: fakeAuthProvider.username };
-    // },
     Component: Navigation,
     children: [
       {
@@ -23,8 +24,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'login',
-        // action: loginAction,
-        // loader: loginLoader,
+        loader: loginLoader,
         Component: LoginPage,
       },
       {
@@ -33,15 +33,27 @@ const router = createBrowserRouter([
       },
       {
         path: 'products',
-        children: [
-          { index: true, Component: ProductsPage },
-          // { path: '/products/add/:id', element: <h1>add product</h1> },
-        ],
+        loader: protectedLoader,
+        children: [{ index: true, Component: ProductsPage }],
       },
       { path: '*', Component: ErrorPage },
     ],
   },
 ]);
+
+function loginLoader() {
+  if (authProvider.isAuthenticated) {
+    return redirect('/');
+  }
+  return null;
+}
+
+function protectedLoader() {
+  if (!authProvider.isAuthenticated) {
+    return redirect('/');
+  }
+  return null;
+}
 
 function App() {
   return <RouterProvider router={router} />;

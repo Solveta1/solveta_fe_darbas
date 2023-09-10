@@ -25,13 +25,14 @@ function LoginPage() {
   };
 
   return (
-    <div>
-      <p>Login page</p>
+    <div className='border border-solid border-white w-80 h-96 mr-auto ml-auto rounded-md p-5 shadow-xl'>
+      <h2 className='text-center text-2xl'>Login</h2>
       <Form onSubmit={handleSubmit}>
         <div>
           <label>
-            Email:
+            Email
             <input
+              className='w-full mb-5 h-7 mt-3'
               type='email'
               name='email'
               required
@@ -42,8 +43,9 @@ function LoginPage() {
         </div>
         <div>
           <label>
-            Password:
+            Password
             <input
+              className='w-full h-7 mt-3 mb-5'
               type='password'
               name='password'
               required
@@ -56,7 +58,12 @@ function LoginPage() {
         <div>
           <p>{formError}</p>
         </div>
-        <button type='submit'>Login</button>
+        <button
+          className='w-3/4 rounded-full bg-blue-400 mr-auto ml-auto p-2 text-white'
+          type='submit '
+        >
+          Login
+        </button>
       </Form>
     </div>
   );

@@ -21,13 +21,14 @@ function RegisterPage() {
   };
 
   return (
-    <div>
-      <p>Register page</p>
+    <div className='border border-solid border-white w-80 h-96 mr-auto ml-auto rounded-md p-5 shadow-xl'>
+      <h2 className='text-center text-2xl'>Register</h2>
       <Form onSubmit={handleSubmit}>
         <div>
           <label>
-            Email:
+            Email
             <input
+              className='w-full mb-5 h-7 mt-3'
               type='email'
               name='email'
               required
@@ -38,8 +39,9 @@ function RegisterPage() {
         </div>
         <div>
           <label>
-            Password:
+            Password
             <input
+              className='w-full h-7 mt-3 mb-5'
               type='password'
               name='password'
               required
@@ -52,7 +54,16 @@ function RegisterPage() {
         <div>
           <p>{formError}</p>
         </div>
-        <button type='submit'>Register</button>
+        <button
+          className='w-3/4 rounded-full bg-blue-400 mr-auto ml-auto p-2 text-white'
+          type='submit'
+        >
+          Register
+        </button>
+        <p className='text-base text-center'>
+          Already have an account?{' '}
+          <a href='http://localhost:5173/login'>Login in</a>
+        </p>
       </Form>
     </div>
   );

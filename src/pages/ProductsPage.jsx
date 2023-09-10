@@ -33,17 +33,22 @@ function ProductsPage() {
   }
 
   return (
-    <div>
+    <div className=' grid grid-cols-3 ml-8 mr-8'>
       {products &&
         products.map((product) => (
-          <div key={product.id}>
-            <p>{product.title}</p>
-            <p>{product.description}</p>
-            <p>{product.price}</p>
-            <p>{product.rating}</p>
-            <p>{product.brand}</p>
-            <p>{product.category}</p>
-            <img src={product.thumbnail} alt='lalala' width='300px' />
+          <div className='border-2 border-solid w-80 p-4' key={product.id}>
+            <img
+              className='w-80 h-64'
+              src={product.thumbnail}
+              alt='lalala'
+              width='300px'
+            />
+            <p className='mb-1'>Title: {product.title}</p>
+            <p className='mb-1 mt-1'>Description: {product.description}</p>
+            <p className='mb-1 mt-1'>Price: {product.price}</p>
+            <p className='mb-1 mt-1'>Rating: {product.rating}</p>
+            <p className='mb-1 mt-1'>Brand: {product.brand}</p>
+            <p className='mb-1 mt-1'>Category: {product.category}</p>
           </div>
         ))}
     </div>

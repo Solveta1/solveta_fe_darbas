@@ -13,8 +13,8 @@ function Navigation() {
   if (authProvider.isAuthenticated) {
     return (
       <div>
-        <nav>
-          <ul>
+        <nav className='h-12 p-2'>
+          <ul className='list-none  flex flex-row justify-around'>
             <li>
               <Link to='/'>Home</Link>
             </li>

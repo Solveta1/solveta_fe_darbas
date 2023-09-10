@@ -43,13 +43,14 @@ function ProductAddPage() {
   };
 
   return (
-    <div>
-      <p>Add product page</p>
+    <div className='border border-solid border-white w-80 h-96 mr-auto ml-auto rounded-md p-5 shadow-xl h-auto'>
+      <h2 className='text-center text-2xl'>Add product</h2>
       <Form onSubmit={handleSubmit}>
         <div>
           <label>
-            Shop name:
+            Shop name
             <input
+              className='w-full mb-5 h-7 mt-3'
               type='text'
               name='shopName'
               required
@@ -61,8 +62,9 @@ function ProductAddPage() {
         </div>
         <div>
           <label>
-            Town:
+            Town
             <input
+              className='w-full mb-5 h-7 mt-3'
               type='text'
               name='town'
               required
@@ -74,8 +76,9 @@ function ProductAddPage() {
         </div>
         <div>
           <label>
-            Start year:
+            Start year
             <input
+              className='w-full mb-5 h-7 mt-3'
               type='number'
               name='startYear'
               required
@@ -88,8 +91,9 @@ function ProductAddPage() {
         </div>
         <div>
           <label>
-            Description:
+            Description
             <textarea
+              className='w-full mb-5 h-16 mt-3'
               name='description'
               required
               minLength='6'
@@ -102,7 +106,12 @@ function ProductAddPage() {
         <div>
           <p>{formError}</p>
         </div>
-        <button type='submit'>Register</button>
+        <button
+          className='w-3/4 rounded-full bg-blue-400 mr-auto ml-auto p-2 text-white'
+          type='submit'
+        >
+          Register
+        </button>
       </Form>
     </div>
   );

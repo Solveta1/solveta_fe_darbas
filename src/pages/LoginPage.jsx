@@ -33,6 +33,7 @@ function LoginPage() {
             Email
             <input
               className='w-full mb-5 h-7 mt-3'
+              placeholder='type your email'
               type='email'
               name='email'
               required
@@ -46,6 +47,7 @@ function LoginPage() {
             Password
             <input
               className='w-full h-7 mt-3 mb-5'
+              placeholder='type your password'
               type='password'
               name='password'
               required

@@ -13,8 +13,11 @@ function Navigation() {
   if (authProvider.isAuthenticated) {
     return (
       <div>
-        <nav className='h-12 p-2'>
+        <nav className='h-12 p-2 bg-zinc-900'>
           <ul className='list-none  flex flex-row justify-around'>
+            <li>
+              <img src='./Vector.png' alt='bug' height={100} />
+            </li>
             <li>
               <Link to='/'>Home</Link>
             </li>
@@ -39,13 +42,26 @@ function Navigation() {
 
   return (
     <div>
-      <nav>
-        <ul>
+      <nav className='m-0 p-3 h-12  bg-zinc-900 '>
+        <ul className='list-none flex flex-row justify-around items-center'>
           <li>
-            <Link to='/login'>Login</Link>
+            <img src='../../' alt='bug' height={100} />
           </li>
           <li>
-            <Link to='/register'>Register</Link>
+            <Link
+              className='text-gray-300 text-lg m-0 hover:text-sky-400'
+              to='/login'
+            >
+              Login
+            </Link>
+          </li>
+          <li>
+            <Link
+              className='text-gray-300 hover:text-sky-400 text-lg'
+              to='/register'
+            >
+              Register
+            </Link>
           </li>
         </ul>
       </nav>

@@ -51,7 +51,12 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
+.bgImage {
+  background-image: url('.././/public/colorful_background_18.jpg');
+}
+.bgImageHome {
+  background-image: url('.././public/fire.png');
+}
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

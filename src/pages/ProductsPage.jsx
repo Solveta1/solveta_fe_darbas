@@ -33,24 +33,29 @@ function ProductsPage() {
   }
 
   return (
-    <div className=' grid grid-cols-3 ml-8 mr-8'>
-      {products &&
-        products.map((product) => (
-          <div className='border-2 border-solid w-80 p-4' key={product.id}>
-            <img
-              className='w-80 h-64'
-              src={product.thumbnail}
-              alt='lalala'
-              width='300px'
-            />
-            <p className='mb-1'>Title: {product.title}</p>
-            <p className='mb-1 mt-1'>Description: {product.description}</p>
-            <p className='mb-1 mt-1'>Price: {product.price}</p>
-            <p className='mb-1 mt-1'>Rating: {product.rating}</p>
-            <p className='mb-1 mt-1'>Brand: {product.brand}</p>
-            <p className='mb-1 mt-1'>Category: {product.category}</p>
-          </div>
-        ))}
+    <div className='bg-gray-200'>
+      <div className='grid grid-cols-5 ml-8 mr-8 gap-y-3 gap-x-0'>
+        {products &&
+          products.map((product) => (
+            <div
+              className='w-60 bg-white border border-solid border-white  rounded-md p-5 shadow-xxl'
+              key={product.id}
+            >
+              <img
+                className='w-60 h-48'
+                src={product.thumbnail}
+                alt='lalala'
+                // width='300px'
+              />
+              <p className='mb-1 font-bold'>{product.title}</p>
+              <p className='mb-1 mt-1'>Description: {product.description}</p>
+              <p className='mb-1 mt-1'>Price: {product.price} eur</p>
+              <p className='mb-1 mt-1'>Rating: {product.rating}</p>
+              <p className='mb-1 mt-1'>Brand: {product.brand}</p>
+              <p className='mb-1 mt-1'>Category: {product.category}</p>
+            </div>
+          ))}
+      </div>
     </div>
   );
 }

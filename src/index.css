@@ -57,6 +57,9 @@ button:focus-visible {
 .bgImageHome {
   background-image: url('.././public/fire.png');
 }
+.bgImageProducts {
+  background-image: url('.././public/wave.jpg');
+}
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

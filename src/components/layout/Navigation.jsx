@@ -1,5 +1,6 @@
 import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { authProvider } from '../../services/auth';
+import Footer from '../Footer';
 
 function Navigation() {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ function Navigation() {
     return (
       <div>
         <nav className='p-6 h-12  bg-zinc-900 '>
-          <ul className='m-0 mr-44 list-none flex flex-row justify-between items-center'>
+          <ul className='m-0 list-none flex flex-row justify-between items-center'>
             <li>
               <img className='w-14' src='../../logo.jpg' alt='logo' />
             </li>
@@ -49,16 +50,16 @@ function Navigation() {
             </li>
           </ul>
         </nav>
-
         <Outlet />
+        <Footer />
       </div>
     );
   }
 
   return (
     <div>
-      <nav className='p-6 h-12  bg-zinc-900 '>
-        <ul className='m-0 mr-64 list-none flex flex-row justify-between items-center'>
+      <nav className='p-4 h-12  bg-zinc-900 '>
+        <ul className='m-0 mr-40 list-none flex flex-row justify-between items-center'>
           <li>
             <img className='w-14' src='../../logo.jpg' alt='logo' />
           </li>
@@ -82,6 +83,7 @@ function Navigation() {
       </nav>
 
       <Outlet />
+      <Footer />
     </div>
   );
 }
